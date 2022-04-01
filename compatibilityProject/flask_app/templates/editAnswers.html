@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Answers</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <a class="links" href="/dashboard">Dashboard</a>
+    </div>
+    <div class="container">
+        <div class="wrapper" id="indexforms">
+            <h1 class="center">Edit Your Compatibility Questionnaire Answers</h1>
+            <p>Feel free to edit and update any of your answers to the questions that you feel necessary. Please remember to answer <b>all</b> of the questions!</p>            
+            <form action="/update" method="POST">
+                <div class="formRow"><label for="q1">1. What state are you from?: </label>
+                    <select name="q1">
+                        
+                        {% for x in states %}
+                            {% if x.id == user.q1 %}
+                                <option value="{{x.id}}" selected>{{x.state}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.state}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q2">2. How old are you?: </label> <input type="text"  name="q2" value="{{user.q2}}"></div>
+                <div class="formRow"><label for="q3">3. What level of education have you completed?: </label>
+                    <select name="q3">
+                        
+                        {% for x in edu %}
+                            {% if x.id == user.q3 %}
+                                <option value="{{x.id}}" selected>{{x.education}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.education}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q4">4. What is your preferred form of communication?: </label>
+                    <select name="q4">
+                        
+                        {% for x in comm %}
+                            {% if x.id == user.q4 %}
+                                <option value="{{x.id}}" selected>{{x.communication}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.communication}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q5">5. What is your favorite animal?: </label>
+                    <select name="q5">
+                        
+                        {% for x in animal %}
+                            {% if x.id == user.q5 %}
+                                <option value="{{x.id}}" selected>{{x.animal}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.animal}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q6">6. What is your favorite color?: </label>
+                    <select name="q6">
+                        
+                        {% for x in color %}
+                            {% if x.id == user.q6 %}
+                                <option value="{{x.id}}" selected>{{x.color}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.color}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q7">7. What is your preferred form of entertainment?: </label>
+                    <select name="q7">
+                        
+                        {% for x in entertain %}
+                            {% if x.id == user.q7 %}
+                                <option value="{{x.id}}" selected>{{x.entertainment}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.entertainment}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q8">8. What is your favorite genre of music?: </label>
+                    <select name="q8">
+                        
+                        {% for x in music %}
+                            {% if x.id == user.q8 %}
+                                <option value="{{x.id}}" selected>{{x.music}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.music}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q9">9. What is your favorite sport?: </label>
+                    <select name="q9">
+                        
+                        {% for x in sport %}
+                            {% if x.id == user.q9 %}
+                                <option value="{{x.id}}" selected>{{x.sport}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.sport}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q10">10. Do you prefer indoor or outdoor activities?: </label>
+                    <select name="q10">
+                        
+                        {% for x in inOutdoor %}
+                            {% if x.id == user.q10 %}
+                                <option value="{{x.id}}" selected>{{x.inOutdoor}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.inOutdoor}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q11">11. Are you an introvert or extrovert?: </label>
+                    <select name="q11">
+                        
+                        {% for x in introExtrovert %}
+                            {% if x.id == user.q11 %}
+                                <option value="{{x.id}}" selected>{{x.introExtrovert}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.introExtrovert}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q12">12. What is your favorite drink?: </label> 
+                    <select name="q12">
+                        
+                        {% for x in drink %}
+                            {% if x.id == user.q12 %}
+                                <option value="{{x.id}}" selected>{{x.drink}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.drink}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q13">13. What is your favorite cuisine?: </label>
+                    <select name="q13">
+                        
+                        {% for x in cuisine %}
+                            {% if x.id == user.q13 %}
+                                <option value="{{x.id}}" selected>{{x.cuisine}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.cuisine}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q14">14. Are you close to your family?: </label>
+                    <select name="q14">
+                        
+                        {% for x in options %}
+                            {% if x.id == user.q14 %}
+                                <option value="{{x.id}}" selected>{{x.options}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.options}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q15">15. Do you consider yourself a do-er or a thinker?: </label>
+                    <select name="q15">
+                        
+                        {% for x in doThink %}
+                            {% if x.id == user.q15 %}
+                                <option value="{{x.id}}" selected>{{x.doThink}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.doThink}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q16">16. Do you prefer spontaneity or structure?: </label>
+                    <select name="q16">
+                        
+                        {% for x in sponStruct %}
+                            {% if x.id == user.q16 %}
+                                <option value="{{x.id}}" selected>{{x.sponStruct}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.sponStruct}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q17">17. Do you have any tattoos and/or piercings?: </label>
+                    <select name="q17">
+                        
+                        {% for x in options %}
+                            {% if x.id == user.q17 %}
+                                <option value="{{x.id}}" selected>{{x.options}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.options}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q18">18. Are you a realist or an idealist?: </label>
+                    <select name="q18">
+                        
+                        {% for x in realDeal %}
+                            {% if x.id == user.q18 %}
+                                <option value="{{x.id}}" selected>{{x.realDeal}}</option>
+                            {% else %}    
+                                <option value="{{x.id}}">{{x.realDeal}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q19">19. Do you prefer chit-chat or deep conversation?: </label>
+                    <select name="q19">
+                        
+                        {% for x in convo %}
+                            {% if x.id == user.q19 %}
+                                <option value="{{x.id}}" selected>{{x.convo}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.convo}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q20">20. Are you an open or closed book when meeting new people?: </label>
+                    <select name="q20">
+                        {% for x in openClosed %}
+                            {% if x.id == user.q20 %}
+                                <option value="{{x.id}}" selected>{{x.openClosed}}</option>
+                            {% else %}
+                                <option value="{{x.id}}">{{x.openClosed}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="hidden" name="id" value="{{user.id}}">
+                <input class="btn" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

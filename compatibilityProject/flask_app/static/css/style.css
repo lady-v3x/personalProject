@@ -1,0 +1,159 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(185, 41, 241);
+    font-size: 15pt;
+}
+
+body {
+    background-color:rgb(107, 107, 247); 
+    padding: 15px;
+}
+
+input.index {
+    width: 90.6%;
+    height: 22px;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+h3 {
+    margin: 23px;
+    font-size: larger;
+}
+
+
+table, tr, tbody, td, th, thead {
+    border: 2px solid rgba(244, 242, 245, 0.945);
+    padding: 7px;
+}
+
+
+.nav {
+    height: 40px;
+    display: flex;
+    width: 100%;
+    margin: 0px auto;
+    justify-content: flex-end;
+}
+
+.links {
+    display: inline-block;
+    margin: 0px 10px 0px 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(114, 17, 122);
+}
+
+.formRow {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:90%;
+    margin: 10px auto;
+    background-color: #2020A0;
+    padding: 5px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.qHeading {
+    display: flex;
+}
+
+#indexforms {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0,0,0,0.8));
+}
+
+#indexformsReg {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0,0,0,0.8));
+}
+
+form {
+    margin-top: 15px;
+}
+
+input.btn {
+    margin: 0px auto;
+    display: flex;
+    background-color: #2525bb;
+    border: 1px;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0,0,0,0.8));
+    border-radius: 3%;
+    justify-content: center;
+    width: 80px;
+    font-size: 13pt;
+}
+
+.wrapper {
+    width: 650px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: navy;
+    border: 2px;
+    border-radius: 30px;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0,0,0,0.8));
+}
+
+h1 {
+    text-align: center;
+    margin: 10px 10px 30px 0px;
+    font-size: x-large;
+}
+
+
+h2 {
+    margin: 10px 10px 10px 0px;
+    font-size: larger;
+}
+
+.errors {
+    color: powderblue;
+}
+
+h2.errors {
+    font-style: italic;
+}
+
+p.errors {
+    margin-left: 5px;
+}
+
+.center {
+    width: fit-content;
+    margin: 0px auto 15px auto;
+}
+
+hr {
+    margin: 20px auto 15px auto;
+    width: 80%;
+}
+
+
+p {
+    text-align: center;
+    color:blueviolet;
+    font-weight: bold;
+}
+
+.txtsize {
+    font-size: 13pt;
+    text-align: left;
+    margin: 7px auto 7px auto;
+    display: flex;
+    padding: 1px;
+}

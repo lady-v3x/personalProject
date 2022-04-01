@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="wrapper" id="indexformsReg">
+        <div>
+            <h1>Log In</h1>
+            <form action="/login" method='post'>
+                <label class="txtsize" for="email">Email: </label><input class="index" type="text" name="email">
+                <label class="txtsize" for="pw">Password: </label><input class="index" type="password" name="pw"><br>
+                <input class="btn" type="submit" value="Log In">
+            </form>
+        </div>
+    </div>
+    <div class="center">
+        {% with messages = get_flashed_messages() %}     
+        {% if messages %}
+            <hr>                            
+            <h2 class="errors">Error(s):</h2>
+                {% for message in messages %}            
+                    <p class="errors">{{message}}</p>                   
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

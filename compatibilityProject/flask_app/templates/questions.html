@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Questions</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <p>Already a member?<a class="links" href="/loginPage">Login Here!</a></p>
+    </div>
+    <div class="container">
+        <div class="wrapper" id="indexforms">
+            <h1 class="center">Compatibility Questionnaire</h1>
+            <p>Welcome! Please answer <b>all</b> of the following questions as honestly as possible prior to submission.</p>            
+            <form action="/answered" method="POST">
+                <div class="formRow"><label for="q1">1. What state are you from?: </label>
+                    <select name="q1">
+                        <option disabled selected value></option>
+                        {% for x in states %}
+                            <option value="{{x.id}}">{{x.state}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q2">2. How old are you?: </label> <input type="text"  name="q2"></div>
+                <div class="formRow"><label for="q3">3. What level of education have you completed?: </label>
+                    <select name="q3">
+                        <option disabled selected value></option>
+                        {% for x in edu %}
+                            <option value="{{x.id}}">{{x.education}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q4">4. What is your preferred form of communication?: </label>
+                    <select name="q4">
+                        <option disabled selected value></option>
+                        {% for x in comm %}
+                            <option value="{{x.id}}">{{x.communication}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q5">5. What is your favorite animal?: </label>
+                    <select name="q5">
+                        <option disabled selected value></option>
+                        {% for x in animal %}
+                            <option value="{{x.id}}">{{x.animal}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q6">6. What is your favorite color?: </label>
+                    <select name="q6">
+                        <option disabled selected value></option>
+                        {% for x in color %}
+                            <option value="{{x.id}}">{{x.color}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q7">7. What is your preferred form of entertainment?: </label>
+                    <select name="q7">
+                        <option disabled selected value></option>
+                        {% for x in entertain %}
+                            <option value="{{x.id}}">{{x.entertainment}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q8">8. What is your favorite genre of music?: </label>
+                    <select name="q8">
+                        <option disabled selected value></option>
+                        {% for x in music %}
+                            <option value="{{x.id}}">{{x.music}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q9">9. What is your favorite sport?: </label>
+                    <select name="q9">
+                        <option disabled selected value></option>
+                        {% for x in sport %}
+                            <option value="{{x.id}}">{{x.sport}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q10">10. Do you prefer indoor or outdoor activities?: </label>
+                    <select name="q10">
+                        <option disabled selected value></option>
+                        {% for x in inOutdoor %}
+                            <option value="{{x.id}}">{{x.inOutdoor}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q11">11. Are you an introvert or extrovert?: </label>
+                    <select name="q11">
+                        <option disabled selected value></option>
+                        {% for x in introExtrovert %}
+                            <option value="{{x.id}}">{{x.introExtrovert}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q12">12. What is your favorite drink?: </label> 
+                    <select name="q12">
+                        <option disabled selected value></option>
+                        {% for x in drink %}
+                            <option value="{{x.id}}">{{x.drink}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q13">13. What is your favorite cuisine?: </label>
+                    <select name="q13">
+                        <option disabled selected value></option>
+                        {% for x in cuisine %}
+                            <option value="{{x.id}}">{{x.cuisine}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q14">14. Are you close to your family?: </label>
+                    <select name="q14">
+                        <option disabled selected value></option>
+                        {% for x in options %}
+                            <option value="{{x.id}}">{{x.options}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q15">15. Do you consider yourself a do-er or a thinker?: </label>
+                    <select name="q15">
+                        <option disabled selected value></option>
+                        {% for x in doThink %}
+                            <option value="{{x.id}}">{{x.doThink}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q16">16. Do you prefer spontaneity or structure?: </label>
+                    <select name="q16">
+                        <option disabled selected value></option>
+                        {% for x in sponStruct %}
+                            <option value="{{x.id}}">{{x.sponStruct}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q17">17. Do you have any tattoos and/or piercings?: </label>
+                    <select name="q17">
+                        <option disabled selected value></option>
+                        {% for x in options %}
+                            <option value="{{x.id}}">{{x.options}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q18">18. Are you a realist or an idealist?: </label>
+                    <select name="q18">
+                        <option disabled selected value></option>
+                        {% for x in realDeal %}
+                            <option value="{{x.id}}">{{x.realDeal}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q19">19. Do you prefer chit-chat or deep conversation?: </label>
+                    <select name="q19">
+                        <option disabled selected value></option>
+                        {% for x in convo %}
+                            <option value="{{x.id}}">{{x.convo}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="formRow"><label for="q20">20. Are you an open or closed book when meeting new people?: </label>
+                    <select name="q20">
+                        <option disabled selected value></option>
+                        {% for x in openClosed %}
+                            <option value="{{x.id}}">{{x.openClosed}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input class="btn" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
